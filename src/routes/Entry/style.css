@@ -1,0 +1,11 @@
+:root {
+    --themeColor: #142B70;
+    --themeAltColor: #4652A0;
+    --themeFocusColor: #EA3160;
+    --themeTextColor: #f5f6f5;
+}
+
+.entry {
+    height: 100%;
+    width: 100%;
+}

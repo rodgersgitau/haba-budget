@@ -1,0 +1,82 @@
+:root {
+    --themeColor: #142B70;
+    --themeAltColor: #4652A0;
+    --themeFocusColor: #EA3160;
+    --themeTextColor: #f5f6f5;
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation-name: pageFade;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+}
+
+.login h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--themeColor);
+    text-transform: uppercase;
+}
+
+.logo {
+    display: flex;
+    margin: 1rem auto;
+    font-size: 3.5rem;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: calc(5rem + .25vh);
+    width: calc(5rem + .25vh);
+    color: var(--themeTextColor);
+    background: var(--themeColor);
+}
+
+.login form {
+    width: inherit;
+    padding: .5rem;
+    margin: 1rem 2rem;
+}
+
+.login form div:last-of-type {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+
+.link {
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: var(--themeColor);
+    text-transform: capitalize;
+}
+
+.link a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--themeFocusColor);
+}
+
+
+.link:hover,
+.link:active,
+.link a:hover,
+.link a:focus {
+    text-decoration: none;
+}
+
+@media (max-height: 360px) {
+
+    .logo,
+    .login h1,
+    .login form,
+    .login form>div {
+        margin: .5rem 0;
+    }
+}

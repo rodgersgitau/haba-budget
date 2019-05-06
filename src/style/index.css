@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --themeColor: #142B70;
+    --themeAltColor: #4652A0;
+    --themeFocusColor: #EA3160;
+    --themeTextColor: #f5f6f5;
+}
+
+
+#app_wrapper,
+#app_wrapper>#app_desktop,
+#app_wrapper>#app_mobile {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#app_desktop {
+    display: none;
+    color: #fff;
+}
+
+#app_mobile {
+    display: block;
+    color: #20313b;
+    overflow-x: hidden;
+    background: #fff;
+    padding-top: calc(6rem + 0.25vh);
+    padding-bottom: calc(1rem + 0.25vh);
+}
+
+.page_wrapper {
+    animation-name: pageFade;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: .7rem;
+}
+
+.form-group input {
+    border: 0;
+    cursor: text;
+    border-radius: 1rem;
+    padding: .7rem 1rem;
+    font-size: 1.2rem;
+    background: var(--themeTextColor);
+    transition: 0.2s;
+}
+
+.form-group input::placeholder {
+    color: var(--themeColor);
+    font-size: 1.2rem;
+}
+
+.form-group input:focus {
+    outline: 0;
+    background: transparent;
+    border: 1px solid var(--themeTextColor);
+}
+
+.form-group button[type="submit"] {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    color: var(--themeTextColor);
+    background: var(--themeColor);
+}
+
+@keyframes pageFade {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* desktop width */
+@media (min-width: 1024px) {
+    body {
+        background: var(--themeColor);
+    }
+
+    #app_desktop {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #app_mobile {
+        display: none;
+    }
+
+    #app_desktop h1 {
+        margin-bottom: 1.5rem;
+        font-size: 3rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
+
+/* mobile height */
+@media (max-height: 360px) {
+    body {
+        font-size: .9rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+}
